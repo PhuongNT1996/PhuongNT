@@ -129,6 +129,10 @@
     <Content Include="Views\Delivery\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Home\NewProduct.cshtml" />
+    <Content Include="Views\Home\BestSeller.cshtml" />
+    <Content Include="Views\Home\Trending.cshtml" />
+    <Content Include="Views\Home\Catalogue.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,7 +144,14 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\MyTemplate\font\" />
     <Folder Include="Content\MyTemplate\js\" />
+    <Folder Include="Image\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{3ffe2fe8-7b57-4307-ba84-15f88e4908f7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

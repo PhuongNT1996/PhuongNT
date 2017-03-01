@@ -64,3 +64,9 @@ C:\Users\HuynhHQ\Desktop\OnlineShopping\OnlineShopping\bin\System.Web.Mvc.xml
 C:\Users\HuynhHQ\Desktop\OnlineShopping\OnlineShopping\obj\Debug\OnlineShopping.csprojResolveAssemblyReference.cache
 C:\Users\HuynhHQ\Desktop\OnlineShopping\OnlineShopping\obj\Debug\OnlineShopping.dll
 C:\Users\HuynhHQ\Desktop\OnlineShopping\OnlineShopping\obj\Debug\OnlineShopping.pdb
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\Model.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\EntityFramework.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\DataProvider.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\Model.pdb
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\EntityFramework.xml
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\OnlineShopping\bin\DataProvider.pdb

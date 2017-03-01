@@ -1,0 +1,12 @@
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\Model.dll.config
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\Model.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\Model.pdb
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\DataProvider.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\EntityFramework.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\DataProvider.pdb
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\EntityFramework.xml
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\obj\Debug\Model.dll
+D:\Resource FPT\Semester 5\C#\Assignment\Code\OnlineShopping\Model\obj\Debug\Model.pdb

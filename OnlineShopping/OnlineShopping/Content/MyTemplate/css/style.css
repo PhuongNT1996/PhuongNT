@@ -294,8 +294,14 @@ body {
 .heading h3 {
 	font-family: 'ambleregular';
 	font-size:22px;
-	color:#383838;
+	/*color:#383838;*/
 	text-transform: uppercase;
+}
+.heading h3 a{
+	color: #333;
+}
+.heading h3 a:hover{
+	color: #189eff;
 }
 .see {
 	float: right;
@@ -319,7 +325,10 @@ body {
 	box-shadow: 0px 0px 3px rgb(150, 150, 150);
 	-webkit-box-shadow: 0px 0px 3px rgb(150, 150, 150);
 	-moz-box-shadow: 0px 0px 3px rgb(150, 150, 150);
-	-o-box-shadow: 0px 0px 3px rgb(150, 150, 150);
+	-o-box-shadow: 0px 0px 3px rgb(150, 150, 150); 
+}
+.grid_1_of_4:hover{
+	border-color:#189eff;
 }
 .grid_1_of_4:first-child {
 	margin-left: 0;
