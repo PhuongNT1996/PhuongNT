@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CatalogueDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="Models\Catalogue.cs" />
@@ -74,6 +75,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary2\Encryption.csproj">
+      <Project>{1dc14996-cb91-4631-9e01-ab0389b57116}</Project>
+      <Name>Encryption</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataProvider\DataProvider.csproj">
       <Project>{a95892be-a876-4c57-b06e-1765d64bc714}</Project>
       <Name>DataProvider</Name>

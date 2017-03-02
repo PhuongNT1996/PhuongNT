@@ -1,0 +1,5 @@
+C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\ClassLibrary2\obj\Debug\Encryption.csprojResolveAssemblyReference.cache
+C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
