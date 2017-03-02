@@ -33,7 +33,9 @@ namespace Model.DAL
                         Cancel_Amount = reader.GetInt32(6),
                         created_Date = reader.GetDateTime(7)
                     };
-                    return user;
+                    EncryptionSHA sha = new EncryptionSHA();
+                    bool result = sha.doesPasswordMatch(password, user.Password);
+                    return result ? user : null;
                 }
 
             }

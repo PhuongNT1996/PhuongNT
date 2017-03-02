@@ -36,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 if (Session["USER"] != null)
                                 {
                                     name = (string)Session["USER"];
-                                    <li><a href="@Url.Action("","")"> @name </a></li>
+                                    <li><a href="@Url.Action("","")" id="user"> @name </a></li>
                                     <li><a href="#">Checkout</a></li>
                                     <li><a href="@Url.Action("Logout","Login")">Logout</a></li>
                                 }

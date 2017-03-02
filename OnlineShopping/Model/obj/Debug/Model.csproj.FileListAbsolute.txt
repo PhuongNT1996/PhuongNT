@@ -24,3 +24,17 @@ C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\Model\obj\Debug\Model.dll
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\Model\obj\Debug\Model.pdb
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\Model\bin\Debug\ClassLibrary2.dll
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\Model\bin\Debug\ClassLibrary2.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\Model.dll.config
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\Model.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\Model.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\ClassLibrary2.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\DataProvider.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\EntityFramework.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\ClassLibrary2.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\DataProvider.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\EntityFramework.xml
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.pdb

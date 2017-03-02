@@ -1,3 +1,7 @@
+#user{
+	font-size: 11pt;
+	color: #189eff;
+}
 .radi{
     margin-left: 40px;
 }
@@ -135,9 +139,27 @@ button :hover{
 }
 
 /* Center the image and position the close button */
+.div-login{
+	width: 400px;
+	height: 330px;
+	float:left;
+	display:block;
+}
 
+.div-register{
+	padding-left: 75px;
+	width:600px;
+	height:550px;
+	float:left;
+	display:block;
+}
 
-
+.parent-login-register{
+	width: 100%;
+	height:600px;
+	position: relative;
+	z-index: 1;
+}
 .container {
     padding: 16px;
 	padding-top: 10px;

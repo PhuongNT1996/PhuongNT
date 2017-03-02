@@ -13,7 +13,7 @@ namespace DemoEntity.DataProvider
 
         public static string getConnectionString()
         {
-            string strConnection = "server=.;database=OnlineShopping;uid=sa;pwd=123a";
+            string strConnection = "server=.;database=OnlineShopping;uid=sa;pwd=123";
             return strConnection;
         }
 

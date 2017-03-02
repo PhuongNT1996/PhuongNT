@@ -8,3 +8,8 @@ C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\DataProvider\bin\Debug\DataPro
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\DataProvider\obj\Debug\DataProvider.dll
 C:\Users\HuynhHQ\Desktop\MyProject\OnlineShopping\DataProvider\obj\Debug\DataProvider.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\bin\Debug\DataProvider.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\bin\Debug\DataProvider.pdb
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.dll
+D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.pdb
