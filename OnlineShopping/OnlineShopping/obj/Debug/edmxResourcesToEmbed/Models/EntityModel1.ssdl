@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineShoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account_Modification">
+    <Key>
+      <PropertyRef Name="Modification_ID" />
+    </Key>
+    <Property Name="Modification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username_Modify" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Modified_Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Modified_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Bill_ID" />
+    </Key>
+    <Property Name="Bill_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_ID" Type="int" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Total_Price" Type="real" Nullable="false" />
+    <Property Name="Responsible_Man" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Delivered_Date" Type="datetime" />
+    <Property Name="Received_Date" Type="datetime" />
+    <Property Name="Cancelled_Bill" Type="bit" />
+    <Property Name="Reason_Cancel" Type="ntext" />
+    <Property Name="Shipper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reciever_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Reciever_Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reciever_Addresss" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Bill_Modification">
+    <Key>
+      <PropertyRef Name="Modification_ID" />
+    </Key>
+    <Property Name="Modification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username_Modify" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bill_ID" Type="int" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Catalogue">
+    <Key>
+      <PropertyRef Name="Catalogue_ID" />
+    </Key>
+    <Property Name="Catalogue_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Catalogue_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Department_Name" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="District_ID" />
+    </Key>
+    <Property Name="District_ID" Type="int" Nullable="false" />
+    <Property Name="District_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Province_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Full_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Role_ID" Type="nvarchar" MaxLength="250" />
+    <Property Name="Department_ID" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone_Number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee_Account">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Employee_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Level_Access" Type="int" Nullable="false" />
+    <Property Name="Enable" Type="bit" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Created_By_Username" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Image_ID" />
+    </Key>
+    <Property Name="Image_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ordered_Date" Type="datetime" />
+    <Property Name="Delivered" Type="bit" Nullable="false" />
+    <Property Name="Cancelled_Order" Type="bit" />
+    <Property Name="Reason_Cancel" Type="ntext" />
+    <Property Name="Order_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Exact_Address" Type="ntext" />
+    <Property Name="Order_Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Province_ID" Type="int" />
+    <Property Name="District_ID" Type="int" />
+    <Property Name="Town_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Order_Modification">
+    <Key>
+      <PropertyRef Name="Modification_ID" />
+    </Key>
+    <Property Name="Modification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username_Modify" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Order_ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Catalogue_ID" Type="int" Nullable="false" />
+    <Property Name="Is_Sale" Type="bit" Nullable="false" />
+    <Property Name="Product_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Price" Type="real" Nullable="false" />
+    <Property Name="Level_Trending" Type="int" Nullable="false" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Products_Available" Type="int" />
+    <Property Name="Total_Sold" Type="int" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Created_Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Guarantee_Description" Type="ntext" />
+    <Property Name="Title_Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="Tax_Percent" Type="real" />
+    <Property Name="Manufacturer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Product_Modification">
+    <Key>
+      <PropertyRef Name="Modification_ID" />
+    </Key>
+    <Property Name="Modification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="ntext" Nullable="false" />
+    <Property Name="Modified_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_Order_Details">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="int" Nullable="false" />
+    <Property Name="Order_ID" Type="int" Nullable="false" />
+    <Property Name="Order_Quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="real" Nullable="false" />
+    <Property Name="Discount_Percent" Type="int" />
+    <Property Name="Promotion_Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Promotion">
+    <Key>
+      <PropertyRef Name="Promotion_ID" />
+    </Key>
+    <Property Name="Promotion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Promotion_Description" Type="ntext" />
+    <Property Name="Discount_Percent" Type="int" />
+    <Property Name="From_Date" Type="datetime" />
+    <Property Name="To_Date" Type="datetime" />
+    <Property Name="Enable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Province_ID" />
+    </Key>
+    <Property Name="Province_ID" Type="int" Nullable="false" />
+    <Property Name="Province_Name" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Role_ID" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Town">
+    <Key>
+      <PropertyRef Name="Town_ID" />
+    </Key>
+    <Property Name="Town_ID" Type="int" Nullable="false" />
+    <Property Name="Town_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="District_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Account">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Full_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Cancel_Amount" Type="int" />
+    <Property Name="created_Date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Account_Modification_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Account_Modification" Type="Self.Account_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Account_Modification">
+        <PropertyRef Name="Username_Modify" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Modification_Employee_Account1">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Account_Modification" Type="Self.Account_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Account_Modification">
+        <PropertyRef Name="Modified_Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Shipper_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Responsible_Man" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Modification_Bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
+    <End Role="Bill_Modification" Type="Self.Bill_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Bill_ID" />
+      </Principal>
+      <Dependent Role="Bill_Modification">
+        <PropertyRef Name="Bill_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Modification_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="0..1" />
+    <End Role="Bill_Modification" Type="Self.Bill_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Bill_Modification">
+        <PropertyRef Name="Username_Modify" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Order_Details">
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Details">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_District_Province">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="District" Type="Self.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Province_ID" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="Province_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Account_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Employee_Account">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Department_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Role_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Image_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Image" Type="Self.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modification_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Product_Modification" Type="Self.Product_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Product_Modification">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modification_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Modification" Type="Self.Product_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Product_Modification">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_District">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="District_ID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="District_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Province">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Province_ID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Province_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Town">
+    <End Role="Town" Type="Self.Town" Multiplicity="0..1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town">
+        <PropertyRef Name="Town_ID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Town_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_User_Account">
+    <End Role="User_Account" Type="Self.User_Account" Multiplicity="1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Account">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Modification_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Order_Modification" Type="Self.Order_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Order_Modification">
+        <PropertyRef Name="Username_Modify" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Modification_Order_Details">
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="1" />
+    <End Role="Order_Modification" Type="Self.Order_Modification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Details">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Order_Modification">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Catalogue">
+    <End Role="Catalogue" Type="Self.Catalogue" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogue">
+        <PropertyRef Name="Catalogue_ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Catalogue_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Employee_Account">
+    <End Role="Employee_Account" Type="Self.Employee_Account" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Account">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Created_Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Order_Details_Order_Details">
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="1" />
+    <End Role="Product_Order_Details" Type="Self.Product_Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Details">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Product_Order_Details">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Order_Details_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Order_Details" Type="Self.Product_Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Product_Order_Details">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Promotion_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Promotion" Type="Self.Promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Promotion">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Town_District">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="Town" Type="Self.Town" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="District_ID" />
+      </Principal>
+      <Dependent Role="Town">
+        <PropertyRef Name="District_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineShoppingModelStoreContainer">
+    <EntitySet Name="Account_Modification" EntityType="Self.Account_Modification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_Modification" EntityType="Self.Bill_Modification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogue" EntityType="Self.Catalogue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Account" EntityType="Self.Employee_Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Modification" EntityType="Self.Order_Modification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Modification" EntityType="Self.Product_Modification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Order_Details" EntityType="Self.Product_Order_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Town" EntityType="Self.Town" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Account" EntityType="Self.User_Account" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Account_Modification_Employee_Account" Association="Self.FK_Account_Modification_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Account_Modification" EntitySet="Account_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Modification_Employee_Account1" Association="Self.FK_Account_Modification_Employee_Account1">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Account_Modification" EntitySet="Account_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Employee" Association="Self.FK_Bill_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Employee_Account" Association="Self.FK_Bill_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Modification_Bill" Association="Self.FK_Bill_Modification_Bill">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="Bill_Modification" EntitySet="Bill_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Modification_Employee_Account" Association="Self.FK_Bill_Modification_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Bill_Modification" EntitySet="Bill_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Order_Details" Association="Self.FK_Bill_Order_Details">
+      <End Role="Order_Details" EntitySet="Order_Details" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="District" EntitySet="District" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Account_Employee" Association="Self.FK_Employee_Account_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Department" Association="Self.FK_Employee_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Image_Product" Association="Self.FK_Image_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Image" EntitySet="Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modification_Employee_Account" Association="Self.FK_Modification_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Product_Modification" EntitySet="Product_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modification_Product" Association="Self.FK_Modification_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Product_Modification" EntitySet="Product_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_District" Association="Self.FK_Order_Details_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Province" Association="Self.FK_Order_Details_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Town" Association="Self.FK_Order_Details_Town">
+      <End Role="Town" EntitySet="Town" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_User_Account" Association="Self.FK_Order_Details_User_Account">
+      <End Role="User_Account" EntitySet="User_Account" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Modification_Employee_Account" Association="Self.FK_Order_Modification_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Order_Modification" EntitySet="Order_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Modification_Order_Details" Association="Self.FK_Order_Modification_Order_Details">
+      <End Role="Order_Details" EntitySet="Order_Details" />
+      <End Role="Order_Modification" EntitySet="Order_Modification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Catalogue" Association="Self.FK_Product_Catalogue">
+      <End Role="Catalogue" EntitySet="Catalogue" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Employee_Account" Association="Self.FK_Product_Employee_Account">
+      <End Role="Employee_Account" EntitySet="Employee_Account" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Order_Details_Order_Details" Association="Self.FK_Product_Order_Details_Order_Details">
+      <End Role="Order_Details" EntitySet="Order_Details" />
+      <End Role="Product_Order_Details" EntitySet="Product_Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Order_Details_Product" Association="Self.FK_Product_Order_Details_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Product_Order_Details" EntitySet="Product_Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Promotion_Product" Association="Self.FK_Promotion_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Promotion" EntitySet="Promotion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Town_District" Association="Self.FK_Town_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Town" EntitySet="Town" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

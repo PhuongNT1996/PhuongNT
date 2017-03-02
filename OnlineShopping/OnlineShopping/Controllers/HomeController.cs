@@ -1,7 +1,4 @@
-﻿using Model.DAL;
-using Model.Models;
-using Model.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,74 +11,11 @@ namespace OnlineShopping.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Session["User"] = null;
             ViewBag.TitlePage = "Online Shopping | Home";
             ViewBag.Page = "Home";
-
-            HomeProductsModel homeProduct = new HomeProductsModel();
-            ProductDAL productDal = new ProductDAL();
-
-            List<Product> products = productDal.getTopNewProduct();           
-            homeProduct.NewProducts = products;
-
-            products = productDal.getTopTrending();
-            homeProduct.TrendingProducts = products;
-
-            products = productDal.getTopBestSeller();
-            homeProduct.BestSellerProducts = products;
-
-            CatalogueDAL catalogueDal = new CatalogueDAL();
-            List<Catalogue> catalogues = catalogueDal.getAllCatalogues();
-            homeProduct.Catalogues = catalogues;
-
-            return View(homeProduct);
+            return View();
         }
 
-        public ActionResult NewProduct()
-        {
-            ViewBag.TitlePage = "Online Shopping | Home";
-            ViewBag.Page = "Home";
-
-            HomeProductsModel homeProduct = new HomeProductsModel();
-            ProductDAL productDal = new ProductDAL();
-
-            List<Product> products = productDal.getAllNewProduct();
-
-            return View(products);
-        }
-
-        public ActionResult BestSeller()
-        {
-            ViewBag.TitlePage = "Online Shopping | Home";
-            ViewBag.Page = "Home";
-
-            HomeProductsModel homeProduct = new HomeProductsModel();
-            ProductDAL productDal = new ProductDAL();
-
-            List<Product> products = productDal.getAllBestSeller();
-
-            return View(products);
-        }
-
-        public ActionResult Trending()
-        {
-            ViewBag.TitlePage = "Online Shopping | Home";
-            ViewBag.Page = "Home";
-
-            HomeProductsModel homeProduct = new HomeProductsModel();
-            ProductDAL productDal = new ProductDAL();
-
-            List<Product> products = productDal.getAllTrending();
-
-            return View(products);
-        }
-
-        public ActionResult Catalogue(int ID)
-        {
-            CatalogueDAL catalogueDal = new CatalogueDAL();
-            Catalogue catalogue = catalogueDal.getCatalogueById(ID);
-
-            catalogueDal.getAllProductsByCatalogue(catalogue);
-            return View(catalogue);
-        }
     }
 }

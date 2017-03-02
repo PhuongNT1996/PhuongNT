@@ -1,0 +1,27 @@
+﻿
+@using (Html.BeginForm())
+{   
+
+        <div class="container">        
+            <div class="myImage">
+                <div class="myImage"><img src="~/Content/MyTemplate/images/login.PNG" /></div>
+                <label class="login">Login</label><br />
+            </div><br /><br />           
+            <br /><br /><br />
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="txtUsername" class="inputTextPass" required><br />
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="txtPassword" class="inputTextPass" required><br />
+            <div id="btnLogin">
+                <button type="submit" name="login_button">Login</button>
+            </div>
+            @ViewBag.Message
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>  
+}
+      
+    
