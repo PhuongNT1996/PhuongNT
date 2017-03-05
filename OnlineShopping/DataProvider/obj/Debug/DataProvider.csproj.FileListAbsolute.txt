@@ -13,3 +13,8 @@ D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\bin\Debug
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.dll
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\DataProvider\obj\Debug\DataProvider.pdb
+C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\DataProvider\bin\Debug\DataProvider.dll
+C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\DataProvider\bin\Debug\DataProvider.pdb
+C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
+C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\DataProvider\obj\Debug\DataProvider.dll
+C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\DataProvider\obj\Debug\DataProvider.pdb
