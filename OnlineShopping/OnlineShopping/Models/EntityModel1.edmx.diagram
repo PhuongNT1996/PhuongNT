@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16bd667f59e145698aa937442fa04f91" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineShoppingModel.Account_Modification" Width="1.5" PointX="7.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Bill" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Bill_Modification" Width="1.5" PointX="9.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Catalogue" Width="1.5" PointX="5.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Department" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.District" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Employee" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Employee_Account" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Image" Width="1.5" PointX="9.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Order_Details" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Order_Modification" Width="1.5" PointX="10.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Product" Width="1.5" PointX="7.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Product_Modification" Width="1.5" PointX="9.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Product_Order_Details" Width="1.5" PointX="12.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Promotion" Width="1.5" PointX="9.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Province" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Role" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.Town" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingModel.User_Account" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Account_Modification_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Account_Modification_Employee_Account1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Bill_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Bill_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Bill_Modification_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Bill_Order_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Bill_Modification_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Product_Catalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Employee_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_District_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Details_District" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Town_District" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Employee_Account_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Modification_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Modification_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Product_Employee_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Image_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Details_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Details_Town" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Details_User_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Order_Modification_Order_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Product_Order_Details_Order_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Modification_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Product_Order_Details_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingModel.FK_Promotion_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
