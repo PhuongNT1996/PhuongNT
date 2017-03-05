@@ -46,6 +46,36 @@ namespace Model.DAL
             return null;
         }
 
+        public User_Account getUser(string email)
+        {
+            string sql = "SELECT * FROM User_Account WHERE Email= N'"
+               + email + "'";
+            try
+            {
+                SqlDataReader reader = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text);
+                if (reader.Read())
+                {
+                    User_Account user = new User_Account
+                    {
+                        Email = reader.GetString(0),
+                        Password = reader.GetString(1),
+                        Full_Name = reader.GetString(2),
+                        Birthday = reader.GetDateTime(3),
+                        Gender = reader.GetString(4),
+                        Address = reader.GetString(5),
+                        Cancel_Amount = reader.GetInt32(6),
+                        created_Date = reader.GetDateTime(7)
+                    };
+                    return user;
+                }                    
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return null;
+        }
+
 
         public bool checkExist(string email)
         {
@@ -91,6 +121,23 @@ namespace Model.DAL
             }
         }
 
+        public void updateAccount(string email,string fullname, DateTime birthday, string gender, string address)
+        {
+            string sql = "UPDATE User_Account SET Full_Name = @Full_Name, Birthday = @Birthday, Gender = @Gender, Address = @Address WHERE Email = @Email";
+            SqlParameter emailParam = new SqlParameter("@Email", email);
+            SqlParameter fullNameParam = new SqlParameter("@Full_Name", fullname);
+            SqlParameter birthdayParam = new SqlParameter("@Birthday", birthday);
+            SqlParameter genderParam = new SqlParameter("@Gender", gender);
+            SqlParameter addressParam = new SqlParameter("@Address", address);
+            try
+            {
+                bool result = DataProvider.ExecuteNonQuery(sql, CommandType.Text, fullNameParam, birthdayParam, genderParam, addressParam, emailParam);
+              
+            } catch(SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }

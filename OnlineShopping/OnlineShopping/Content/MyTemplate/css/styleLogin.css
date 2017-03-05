@@ -1,3 +1,39 @@
+.dropbtn {
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+.dropdown-content a:hover {text-decoration: underline}
+
+.account_desc ul li ul{
+    padding:16px;
+    display: none;
+}
+
+.account_desc ul li:hover ul{
+    display: block;
+}
+
+
 #user{
 	font-size: 11pt;
 	color: #189eff;
@@ -104,6 +140,8 @@ button {
     cursor: pointer;
     width: 100%;
 }
+
+
 
 #divLogin{
 	width: 200px;

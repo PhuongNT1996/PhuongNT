@@ -36,7 +36,12 @@ namespace OnlineShopping.Controllers
             }
             else
             {
-                Session["USER"] = u_account.Full_Name;
+                DateTime birthday = (DateTime)u_account.Birthday;
+                Session["USER"] = u_account;
+                Session["DATE"] = birthday.Day.ToString();
+                Session["MONTH"] = birthday.Month.ToString();
+                Session["YEAR"] = birthday.Year.ToString();
+                Session["GENDER"] = u_account.Gender;
                 return RedirectToAction("Index", "Home");
             }
             return View();
@@ -71,7 +76,11 @@ namespace OnlineShopping.Controllers
                 DateTime today = DateTime.Today;
                 User_Account u_account = new User_Account { Email = email, Password= password, Full_Name = fullName,Birthday = bd, Gender= gender,Address = address,  Cancel_Amount = 0, created_Date = today };            
                 accountDal.registerAccount(email, password, fullName, bd, gender, address, today);
-                Session["USER"] = u_account.Full_Name;
+                Session["USER"] = u_account;
+                Session["DATE"] = bDate;
+                Session["MONTH"] = bMonth;
+                Session["YEAR"] = bYear;
+                Session["GENDER"] = gender;
                 return RedirectToAction("Index", "Home");
             }
             else

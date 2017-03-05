@@ -21,22 +21,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="~/Content/MyTemplate/js/easing.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/startstop-slider.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/jquery.accordion.js"></script>
-    
+  
 </head>
 <body>
+    @using Model.Models;
     <div class="wrap">
             <div class="header">
                 <div class="headertop_desc">
                     <div class="call">
                         <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
                     </div>
-                    <div class="account_desc">
+                    <div class="account_desc" >
                         <ul>
-                            @{ string name;
+                            @{ User_Account user;
                                 if (Session["USER"] != null)
                                 {
-                                    name = (string)Session["USER"];
-                                    <li><a href="@Url.Action("","")" id="user"> @name </a></li>
+                                    user = (User_Account)Session["USER"];
+                                    <li><a href="#" class="dropbtn" > @user.Full_Name </a>
+                                        <ul class="dropdown-content">
+                                            <li><a href="@Url.Action("Update", "UpdateAccount")">Manage My Account</a></li>
+                                            <li><a href="#">My Orders</a></li>
+                                            <li><a href="#">My Returns & Cancellations</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Checkout</a></li>
                                     <li><a href="@Url.Action("Logout","Login")">Logout</a></li>
                                 }
@@ -156,6 +163,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="clear"></div>
                         </ul>
                     </div>
+
                     <div class="search_box">
                         <form>
                             <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">

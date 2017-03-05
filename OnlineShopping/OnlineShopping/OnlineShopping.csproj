@@ -111,6 +111,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\UpdateAccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -135,6 +136,7 @@
     <Content Include="Views\Home\Trending.cshtml" />
     <Content Include="Views\Home\Catalogue.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\UpdateAccount\Update.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

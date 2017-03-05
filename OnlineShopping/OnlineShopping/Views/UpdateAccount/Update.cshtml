@@ -1,9 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using Model.Models
 <script>
         function testIndex() {
             var sel = document.getElementById("slBirthDay");
@@ -66,87 +67,90 @@
         };
 
 
+
+        $(window).bind("load", function () {
+            var sel = document.getElementById("slBirthDay");
+            var date = '@Session["DATE"]';
+            for (var i = 0 ; j = sel.options.length, i < j; i++) {
+                if (sel.options[i].innerHTML === date) {
+                    sel.selectedIndex = i;
+                    break;
+                }
+            }
+
+            var selm = document.getElementById("slBirthMonth");
+            var month = '@Session["MONTH"]';
+            for (var i = 0 ; j = selm.options.length, i < j; i++) {
+                if (selm.options[i].innerHTML === month) {
+                    selm.selectedIndex = i;
+                    break;
+                }
+            }
+
+            var sel = document.getElementById("slBirthYear");
+            var year = '@Session["YEAR"]';
+            for (var i = 0 ; j = sel.options.length, i < j; i++) {
+                if (sel.options[i].innerHTML === year) {
+                    sel.selectedIndex = i;
+                    break;
+                }
+            }
+
+            var sel = document.getElementById("slGender");
+            var gender = '@Session["GENDER"]';
+            for (var i = 0 ; j = sel.options.length, i < j; i++) {
+                if (sel.options[i].innerHTML === gender) {
+                    sel.selectedIndex = i;
+                    break;
+                }
+            }
+        });
+
 </script>
 </div>
-
-<div class="parent-login-register">
-
-
-    @using (Html.BeginForm("Login", "Login"))
-    {
-        <div class="content div-login">
-            <div class="container">
-                <div class="myImage">
-                    <div class="myImage"><img src="~/Content/MyTemplate/images/login.PNG" /></div>
-                    <label class="login">Login</label><br />
-                </div><br /><br />
-
-                <br /><br /><br />
-                <label class="login1"><b>Email</b></label>
-                <input type="email" oninvalid="setCustomValidity('Your Email is INVALID!!!')"
-                       onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Email" name="txtEmail" class="inputTextPass" required><br />
-
-                <label class="login1"><b>Password</b></label>
-                <input type="password" oninvalid="setCustomValidity('PLEASE input password!!!')"
-                       onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Password" name="txtPassword" class="inputTextPass" required><br />
-                <div id="divLogin">
-                    <button type="submit">Login</button>
-                </div>
-                <p style="font-size:large; color:red">@ViewBag.Message</p>
+@using (Html.BeginForm("Update", "UpdateAccount"))
+{
+    <div class="content">
+        <div class="container">
+            <div class="page-header">
+                <h2>My Function Information</h2>
             </div>
-        </div>
-
-    }
-    @using (Html.BeginForm("Register", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div class="content div-register">
-            <div class="container">
-                <div class="myImage">
-                    <div class="myImage"><img src="~/Content/MyTemplate/images/login.PNG" /></div>
-                    <label class="login">Register</label><br />
-                </div><br /><br />
-                <br />
-                <div class="lb">
-                    <p>
-                        <span>Don't have an account?</span>
-                        <a href="#">Login</a>
-                    </p>
-                    <br />
-                </div><br />
-                <div class="info">
+            <div class="info">
+                @{
+                    User_Account user = (User_Account)Session["USER"];
                     <table>
                         <tbody>
                             <tr>
+                                <td><label>Email Address</label></td>
+                                <td><input type="text" readonly value="@user.Email" class="inputTextPass" name="txtEmail" /><br /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Name*</label></td>
                                 <td>
-                                    <label><b>Email</b></label>
-                                </td>
-                                <td>
-                                    <input type="email" oninvalid="setCustomValidity('Your Email is INVALID!!!')"
-                                           onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Email" required class="inputTextPass" name="txtEmail">
+                                    <input type="text" value="@user.Full_Name" oninvalid="setCustomValidity('PLEASE input Full Name!!!')"
+                                           onchange="try { setCustomValidity('') } catch (e) { }" required class="inputTextPass" name="txtFullname" />
                                 </td>
                             </tr>
                             <tr>
+                                <td><label>Gender*</label></td>
                                 <td>
-                                    <label><b>Password</b></label>
-                                </td>
-                                <td>
-                                    <input type="password" oninvalid="setCustomValidity('PLEASE input password!!!')"
-                                           onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Password" required class="inputTextPass" name="txtPassword">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label><b>Full Name</b></label>
-                                </td>
-                                <td>
-                                    <input type="text" oninvalid="setCustomValidity('PLEASE input Full Name!!!')" 
-                                           onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Full Name" required class="inputTextPass" name="txtFullname">
+                                    <select name="slGender" id="slGender" onshow="setIndexOfGender()">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                        <option>Rather not say</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
+                                <td><label>Address*</label></td>
                                 <td>
-                                    <label><strong>BirthDay</strong></label>
+                                    <input type="text" value="@user.Address" oninvalid="setCustomValidity('PLEASE input Address!!!')"
+                                           onchange="try { setCustomValidity('') } catch (e) { }" required class="inputTextPass" name="txtAddress">
                                 </td>
+                            </tr>
+                            <tr>
+                                <td><label><strong>BirthDay</strong></label></td>
                                 <td>
                                     <fieldset>
                                         <select class="birth-day form-control" name="slBirthDay" id="slBirthDay" onchange="setDays(slBirthMonth,this,slBirthYear)">
@@ -185,15 +189,15 @@
                                         </select>
                                         <select class="birth-month form-control" name="slBirthMonth" id="slBirthMonth" onchange="setDays(this,slBirthDay,slBirthYear)">
                                             <option value="0">Month</option>
-                                            <option value="1">01</option>
-                                            <option value="2">02</option>
-                                            <option value="3">03</option>
-                                            <option value="4">04</option>
-                                            <option value="5">05</option>
-                                            <option value="6">06</option>
-                                            <option value="7">07</option>
-                                            <option value="8">08</option>
-                                            <option value="9">09</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
                                             <option value="10">10</option>
                                             <option value="11">11</option>
                                             <option value="12">12</option>
@@ -202,41 +206,15 @@
                                     </fieldset>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <label><b>Gender</b></label>
-                                </td>
-                                <td>
-                                    <select name="slGender">
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Other</option>
-                                        <option>Rather not say</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label><b>Address</b></label>
-                                </td>
-                                <td>
-                                    <input type="text" oninvalid="setCustomValidity('PLEASE input Address!!!')"
-                                      onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Address" required class="inputTextPass" name="txtAddress">
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
-                    <div class="policy">
-                        <input type="checkbox" value="" checked name="cbPoli" data- />I have read and agree to the policies of Online Shopping
-                    </div>
-                    <br />
-                    <div id="divLogin">
-                        <button type="submit" class="btnRe" onclick="return testIndex()">Register</button><br />
-                    </div>
-                    <p style="font-size:large; color:red">@ViewBag.Message</p>
+                }
+                <div id="divLogin">
+                    <button type="submit" class="btnSa" onclick="return testIndex()">SAVE</button><br />
                 </div>
+                <p style="font-size:large; color:lightgreen">@ViewBag.Message</p>
             </div>
         </div>
-    }
-</div>
+    </div>
+                    }
 
