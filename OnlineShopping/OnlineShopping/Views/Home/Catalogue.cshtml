@@ -4,24 +4,65 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model  Model.Models.Catalogue
+
  </div>
 
-<div class="section group">
-    @foreach (var item in Model.Products)
-            {
-        <div class="grid_1_of_4 images_1_of_4">
-            <a href="preview.html"><img src="@Url.Content(@item.Title_Image)" alt="" /></a>
-            <h2>@item.Product_Name</h2> <img src="" />
-            <div class="price-details">
-                <div class="price-number">
-                    <p><span class="rupees">$@item.Price</span></p>
+@*<div class="section group">
+        @foreach (var item in Model.Products)
+        {
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="preview.html"><img src="@Url.Content(@item.Title_Image)" alt="" /></a>
+                <h2>@item.Product_Name</h2> <img src="" />
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">$@item.Price</span></p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="preview.html">Add to Cart</a></h4>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="add-cart">
-                    <h4><a href="preview.html">Add to Cart</a></h4>
-                </div>
-                <div class="clear"></div>
-            </div>
 
-        </div>
-    }
+            </div>
+        }
+    </div>*@
+
+<div class="content_bottom" style="margin-top:10px;">
+    <div class="heading">
+        <h3>
+            @Html.ActionLink(Model.Catalogue_Name, "Catalogue", "Home", new { IDStr = Model.Catalogue_ID + "" }, null)
+        </h3>
+    </div>
+    <div class="clear"></div>
 </div>
+
+@for (int i = 0; i < Model.Products.Count; i += 4)
+{
+    <div class="section group">
+        @for (int j = i; j < i + 4; j++)
+        {
+            if(j >= Model.Products.Count)
+            {
+                break;
+            }
+            Model.Models.Product product = Model.Products.ElementAt(j);
+            <div class="grid_1_of_4 images_1_of_4">
+                
+                <a href="@Url.Action("ProductDetails", "Product", new { productIDStr = @product.Product_ID + "" })">
+                    <img src="@Url.Content(@product.Title_Image)" alt="" />
+                </a>
+                <h2>@product.Product_Name</h2> <img src="" />
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">@product.Price</span></p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="preview.html">Add to Cart</a></h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        }
+    </div>
+}

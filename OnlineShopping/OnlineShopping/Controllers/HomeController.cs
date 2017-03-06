@@ -75,8 +75,13 @@ namespace OnlineShopping.Controllers
             return View(products);
         }
 
-        public ActionResult Catalogue(int ID)
+        public ActionResult Catalogue(string IDStr)
         {
+            int ID = 1;
+            if (int.TryParse(IDStr, out ID))
+            {
+                ID = int.Parse(IDStr);
+            }
             CatalogueDAL catalogueDal = new CatalogueDAL();
             Catalogue catalogue = catalogueDal.getCatalogueById(ID);
 

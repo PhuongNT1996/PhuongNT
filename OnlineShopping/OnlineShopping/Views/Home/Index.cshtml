@@ -13,7 +13,7 @@
                 <h3>Categories</h3>
                 @foreach (var item in Model.Catalogues)
                 {
-                    <li>@Html.ActionLink(@item.Catalogue_Name, "Catalogue", "Home", new {ID = @item.Catalogue_ID }, null)
+                    <li>@Html.ActionLink(@item.Catalogue_Name, "Catalogue", "Home", new {IDStr = @item.Catalogue_ID + ""}, null)
                     </li>          
                 }
             </ul>
@@ -90,14 +90,16 @@
             @foreach (var item in Model.TrendingProducts)
             {
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="@Url.Content(@item.Title_Image)" alt="" /></a>
+                    <a href="@Url.Action("ProductDetails", "Product", new { productIDStr = @item.Product_ID + "" })">
+                        <img src="@Url.Content(@item.Title_Image)" alt="" />
+                    </a>
                     <h2>@item.Product_Name</h2> <img src="" />
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$@item.Price</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
+                            <h4>@Html.ActionLink("Add to Cart", "ProductDetails", "Product", new { productIDStr = @item.Product_ID + "" }, null)</h4>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -119,7 +121,9 @@
             @foreach (var item in Model.NewProducts)
             {
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="@Url.Content(@item.Title_Image)" alt="" /></a>
+                    <a href="@Url.Action("ProductDetails", "Product", new { productIDStr = @item.Product_ID + "" })">
+                        <img src="@Url.Content(@item.Title_Image)" alt="" />
+                    </a>
                     <h2>@item.Product_Name</h2> <img src=""/>
                     <div class="price-details">
                         <div class="price-number">
@@ -148,7 +152,9 @@
             @foreach (var item in Model.BestSellerProducts)
             {
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="@Url.Content(@item.Title_Image)" alt="" /></a>
+                    <a href="@Url.Action("ProductDetails", "Product", new { productIDStr = @item.Product_ID + "" })">
+                        <img src="@Url.Content(@item.Title_Image)" alt="" />
+                    </a>
                     <h2>@item.Product_Name</h2> <img src="" />
                     <div class="price-details">
                         <div class="price-number">
