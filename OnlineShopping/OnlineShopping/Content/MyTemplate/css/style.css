@@ -242,14 +242,13 @@ body {
 }
 .categories li a{
 	display:block;
-	font-size:0.8em;
-	padding:8px 15px;
-    color: #9C9C9C;
+	font-size:1em;
+	padding:8px 20px;
+    color: #666;
     font-family: 'ambleregular';
     margin:0 20px;
     background:url(../images/drop_arrow.png) no-repeat 0;
     border-bottom: 1px solid #EEE;
-    text-transform:uppercase;	
 }
 .categories li:last-child a{
 	border:none;
@@ -270,7 +269,7 @@ body {
 .content h2 {
 	color: #383838;
 	margin-bottom: 0.5em;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	line-height: 1.2;
 	font-family: 'ambleregular';
 	font-weight: normal;

@@ -38,17 +38,3 @@ D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\bin\Debug\Entity
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.dll
 D:\Resource FPT\Semester 5\C#\Project\Code\OnlineShopping\Model\obj\Debug\Model.pdb
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\Model.dll.config
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\Model.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\Model.pdb
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\ClassLibrary2.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\DataProvider.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\EntityFramework.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\ClassLibrary2.pdb
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\DataProvider.pdb
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\EntityFramework.xml
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\obj\Debug\Model.dll
-C:\Users\HuynhHQ\Desktop\GitHub\Assignment\OnlineShopping\Model\obj\Debug\Model.pdb

@@ -67,7 +67,9 @@
     <Compile Include="Models\Town.cs" />
     <Compile Include="Models\User_Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CartModel.cs" />
     <Compile Include="ViewModel\HomeProductsModel.cs" />
+    <Compile Include="ViewModel\ProductDetailsModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

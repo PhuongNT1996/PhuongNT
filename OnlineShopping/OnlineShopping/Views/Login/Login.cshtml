@@ -5,65 +5,65 @@
 }
 
 <script>
-        function testIndex() {
-            var sel = document.getElementById("slBirthDay");
-            var selm = document.getElementById("slBirthMonth");
-            var sely = document.getElementById("slBirthYear");
+    function testIndex() {
+        var sel = document.getElementById("slBirthDay");
+        var selm = document.getElementById("slBirthMonth");
+        var sely = document.getElementById("slBirthYear");
 
-            var opt = sel.options[sel.selectedIndex];
-            var optm = selm.options[selm.selectedIndex];
-            var opty = sely.options[sely.selectedIndex];
-
-
-            if (opt.value != "0") {
-                sel.style.borderColor = "#A4A4A4";
-            }
-            if (optm.value != "0") {
-                selm.style.borderColor = "#A4A4A4";
-            }
-            if (opty.value != "-1") {
-                sely.style.borderColor = "#A4A4A4";
-            }
+        var opt = sel.options[sel.selectedIndex];
+        var optm = selm.options[selm.selectedIndex];
+        var opty = sely.options[sely.selectedIndex];
 
 
-            if (opt.value == "0") {
-                sel.style.borderColor = "#FF0000";
-                return false;
-            } else if (optm.value == "0") {
-                selm.style.borderColor = "#FF0000";
-                return false;
-            } else if (opty.value == "-1") {
-                sely.style.borderColor = "#FF0000";
-                return false;
-            }
-            return true;
+        if (opt.value != "0") {
+            sel.style.borderColor = "#A4A4A4";
+        }
+        if (optm.value != "0") {
+            selm.style.borderColor = "#A4A4A4";
+        }
+        if (opty.value != "-1") {
+            sely.style.borderColor = "#A4A4A4";
         }
 
-        var numDays = {
-            '1': 31, '2': 28, '3': 31, '4': 30, '5': 31, '6': 30,
-            '7': 31, '8': 31, '9': 30, '10': 31, '11': 30, '12': 31
-        };
 
-        function setDays(oMonthSel, oDaysSel, oYearSel) {
-            var nDays, oDaysSelLgth, opt, i = 1;
-            nDays = numDays[oMonthSel[oMonthSel.selectedIndex].value];
-            if (nDays == 28 && oYearSel[oYearSel.selectedIndex].value % 4 == 0)
-                ++nDays;
-            oDaysSelLgth = oDaysSel.length - 1;
-            if (nDays != oDaysSelLgth) {
-                if (nDays < oDaysSelLgth)
-                    oDaysSel.length = nDays + 1;
-                else for (i; i < nDays - oDaysSelLgth + 1; i++) {
-                    opt = new Option(oDaysSelLgth + i, oDaysSelLgth + i);
-                    oDaysSel.options[oDaysSel.length] = opt;
-                }
+        if (opt.value == "0") {
+            sel.style.borderColor = "#FF0000";
+            return false;
+        } else if (optm.value == "0") {
+            selm.style.borderColor = "#FF0000";
+            return false;
+        } else if (opty.value == "-1") {
+            sely.style.borderColor = "#FF0000";
+            return false;
+        }
+        return true;
+    }
+
+    var numDays = {
+        '1': 31, '2': 28, '3': 31, '4': 30, '5': 31, '6': 30,
+        '7': 31, '8': 31, '9': 30, '10': 31, '11': 30, '12': 31
+    };
+
+    function setDays(oMonthSel, oDaysSel, oYearSel) {
+        var nDays, oDaysSelLgth, opt, i = 1;
+        nDays = numDays[oMonthSel[oMonthSel.selectedIndex].value];
+        if (nDays == 28 && oYearSel[oYearSel.selectedIndex].value % 4 == 0)
+            ++nDays;
+        oDaysSelLgth = oDaysSel.length - 1;
+        if (nDays != oDaysSelLgth) {
+            if (nDays < oDaysSelLgth)
+                oDaysSel.length = nDays + 1;
+            else for (i; i < nDays - oDaysSelLgth + 1; i++) {
+                opt = new Option(oDaysSelLgth + i, oDaysSelLgth + i);
+                oDaysSel.options[oDaysSel.length] = opt;
             }
-            var oForm = oMonthSel.form;
-            var month = oMonthSel.options[oMonthSel.selectedIndex].value;
-            var day = oDaysSel.options[oDaysSel.selectedIndex].value;
-            var year = oYearSel.options[oYearSel.selectedIndex].value;
-            oForm.hidden.value = month + '/' + day + '/' + year;
-        };
+        }
+        var oForm = oMonthSel.form;
+        var month = oMonthSel.options[oMonthSel.selectedIndex].value;
+        var day = oDaysSel.options[oDaysSel.selectedIndex].value;
+        var year = oYearSel.options[oYearSel.selectedIndex].value;
+        oForm.hidden.value = month + '/' + day + '/' + year;
+    };
 
 
 </script>
@@ -106,13 +106,7 @@
                     <label class="login">Register</label><br />
                 </div><br /><br />
                 <br />
-                <div class="lb">
-                    <p>
-                        <span>Don't have an account?</span>
-                        <a href="#">Login</a>
-                    </p>
-                    <br />
-                </div><br />
+                <br />
                 <div class="info">
                     <table>
                         <tbody>
@@ -139,7 +133,7 @@
                                     <label><b>Full Name</b></label>
                                 </td>
                                 <td>
-                                    <input type="text" oninvalid="setCustomValidity('PLEASE input Full Name!!!')" 
+                                    <input type="text" oninvalid="setCustomValidity('PLEASE input Full Name!!!')" \
                                            onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Full Name" required class="inputTextPass" name="txtFullname">
                                 </td>
                             </tr>
@@ -220,8 +214,7 @@
                                     <label><b>Address</b></label>
                                 </td>
                                 <td>
-                                    <input type="text" oninvalid="setCustomValidity('PLEASE input Address!!!')"
-                                      onchange="try { setCustomValidity('') } catch (e) { }" placeholder="Enter Address" required class="inputTextPass" name="txtAddress">
+                                    <input type="text" placeholder="Enter Address" required class="inputTextPass" name="txtAddress">
                                 </td>
                             </tr>
                         </tbody>
@@ -233,10 +226,14 @@
                     <div id="divLogin">
                         <button type="submit" class="btnRe" onclick="return testIndex()">Register</button><br />
                     </div>
-                    <p style="font-size:large; color:red">@ViewBag.Message</p>
+                    @{
+                        if (Session["ERROR"] != null)
+                        {
+                            <p style="font-size:large; color:red">@Session["ERROR"].ToString()</p>
+                        }
+                    }
                 </div>
             </div>
         </div>
-    }
+                        }
 </div>
-

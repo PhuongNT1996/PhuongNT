@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Model.Models;
+<h2>Cart</h2>
+@{
+    Dictionary<Product, int> cart = (Dictionary<Product, int>)Session["CART"];
+    <table>
+        <tbody>
+            @foreach (KeyValuePair<Product,int> mvp in cart)
+            {
+            <tr>
+                <td>@mvp.Key.Product_ID</td>
+                <td>@mvp.Key.Product_Name</td>
+                <td>@mvp.Key.Price</td>
+                <td>@mvp.Value</td>
+                
+            </tr>
+            }
+        </tbody>
+    </table>
+}

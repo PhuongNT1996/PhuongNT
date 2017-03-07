@@ -16,32 +16,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="~/Content/MyTemplate/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Content/MyTemplate/css/slider.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Content/MyTemplate/css/styleLogin.css" rel="stylesheet" type="text/css" media="all" />
+
+
     <script type="text/javascript" src="~/Content/MyTemplate/js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/move-top.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/easing.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/startstop-slider.js"></script>
     <script type="text/javascript" src="~/Content/MyTemplate/js/jquery.accordion.js"></script>
-  
+    
 </head>
 <body>
-    @using Model.Models;
+     @using Model.Models;
     <div class="wrap">
             <div class="header">
                 <div class="headertop_desc">
                     <div class="call">
-                        <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+                        <p><span>Hotline: </span> call us <span class="number">1900-6035</span></span></p>
                     </div>
-                    <div class="account_desc" >
+                    <div class="account_desc">
                         <ul>
                             @{ User_Account user;
                                 if (Session["USER"] != null)
                                 {
                                     user = (User_Account)Session["USER"];
-                                    <li><a href="#" class="dropbtn" > @user.Full_Name </a>
+                                    <li>
+                                        <a href="#" class="dropbtn"> @user.Full_Name </a>
                                         <ul class="dropdown-content">
-                                            <li><a href="@Url.Action("Update", "UpdateAccount")">Manage My Account</a></li>
-                                            <li><a href="#">My Orders</a></li>
-                                            <li><a href="#">My Returns & Cancellations</a></li>
+                                            <li><a href="@Url.Action("Update", "UpdateAccount")">Manage My Account</a></li>                                          
                                         </ul>
                                     </li>
                                     <li><a href="#">Checkout</a></li>
@@ -163,11 +164,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="clear"></div>
                         </ul>
                     </div>
-
                     <div class="search_box">
-                        <form>
-                            <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                        </form>
+                        @using (Html.BeginForm("Search", "Search"))
+                        {
+                            <input name="txtSearchValue" type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                        }
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -213,8 +214,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="col_1_of_4 span_1_of_4">
                             <h4>Contact</h4>
                             <ul>
-                                <li><span>+91-123-456789</span></li>
-                                <li><span>+00-123-000000</span></li>
+                                <li><span>1900-6035</span></li>
+                                <li><span>1900-6036</span></li>
                             </ul>
                             <div class="social-icons">
                                 <h4>Follow Us</h4>
@@ -231,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <div class="copy_right">
-                    <p>Company Name © All rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
+                    <p>Company Name © All rights Reseverd | Design by  <a href="http://tiki.vn">Tiki</a> </p>
                 </div>
             </div>
             <script type="text/javascript">

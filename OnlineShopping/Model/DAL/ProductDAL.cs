@@ -45,7 +45,8 @@ namespace Model.DAL
 
                     products.Add(product);
                 }
-            } catch (SqlException ex)
+            }
+            catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -260,6 +261,82 @@ namespace Model.DAL
                 throw new Exception(ex.Message);
             }
             return products;
+        }
+
+        public Product getProductById(int id)
+        {
+            Product result = null;
+            string sql = " SELECT *"
+                + " FROM Product"
+                + " WHERE Product_ID = " + id;
+            try
+            {
+                SqlDataReader reader = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text);
+                if (reader.Read())
+                {
+                    result = new Product
+                    {
+                        Product_ID = reader.GetInt32(0),
+                        Catalogue_ID = reader.GetInt32(1),
+                        Is_Sale = reader.GetBoolean(2),
+                        Product_Name = reader.GetString(3),
+                        Price = reader.GetFloat(4),
+                        Level_Trending = reader.GetInt32(5),
+                        Description = reader.GetString(6),
+                        Products_Available = reader.GetInt32(7),
+                        Total_Sold = reader.GetInt32(8),
+                        Created_Date = reader.GetDateTime(9),
+                        Created_Username = reader.GetString(10),
+                        Guarantee_Description = reader.GetString(11),
+                        Title_Image = reader.GetString(12),
+                        Tax_Percent = reader.GetFloat(13),
+                        Manufacturer = reader.GetString(14),
+                    };
+                    return result;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+
+        public List<Product> searchProduct(string searchValue)
+        {
+            List<Product> products = new List<Product>();
+            string sql = "SELECT * FROM Product WHERE Product_Name LIKE '%"+ searchValue +"%'";
+            try
+            {
+                SqlDataReader reader = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text);
+                while (reader.Read())
+                {
+                    Product product = new Product
+                    {
+                        Product_ID = reader.GetInt32(0),
+                        Catalogue_ID = reader.GetInt32(1),
+                        Is_Sale = reader.GetBoolean(2),
+                        Product_Name = reader.GetString(3),
+                        Price = reader.GetFloat(4),
+                        Level_Trending = reader.GetInt32(5),
+                        Description = reader.GetString(6),
+                        Products_Available = reader.GetInt32(7),
+                        Total_Sold = reader.GetInt32(8),
+                        Created_Date = reader.GetDateTime(9),
+                        Created_Username = reader.GetString(10),
+                        Guarantee_Description = reader.GetString(11),
+                        Title_Image = reader.GetString(12),
+                        Tax_Percent = reader.GetFloat(13),
+                        Manufacturer = reader.GetString(14),
+                    };
+                    products.Add(product);
+                }
+                return products;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

@@ -91,12 +91,25 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MyTemplate\css\bootstrap-theme.css" />
+    <Content Include="Content\MyTemplate\css\bootstrap-theme.min.css" />
+    <Content Include="Content\MyTemplate\css\bootstrap.css" />
+    <Content Include="Content\MyTemplate\css\bootstrap.min.css" />
+    <Content Include="Content\MyTemplate\css\cart.css" />
+    <Content Include="Content\MyTemplate\css\easy-responsive-tabs.css" />
+    <Content Include="Content\MyTemplate\css\global.css" />
+    <Content Include="Content\MyTemplate\css\slider.css" />
+    <Content Include="Content\MyTemplate\css\style.css" />
+    <Content Include="Content\MyTemplate\css\styleLogin.css" />
     <Content Include="Content\MyTemplate\images\Title_Logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\MyTemplate\css\bootstrap-theme.css.map" />
+    <Content Include="Content\MyTemplate\css\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -106,12 +119,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\UpdateAccountController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,7 +151,11 @@
     <Content Include="Views\Home\Trending.cshtml" />
     <Content Include="Views\Home\Catalogue.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\UpdateAccount\Update.cshtml" />
+    <Content Include="Views\Cart\ViewCart.cshtml" />
+    <Content Include="Views\Product\ProductDetails.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Cart\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

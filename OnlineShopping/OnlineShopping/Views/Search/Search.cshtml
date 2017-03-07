@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Model.Models.Product>
+<script>
+
+</script>
+</div>
+<div class="content_bottom" style="margin-top:10px;">
+    <div class="heading">
+        <h3>
+            Search results for  '@Session["SVALUE"].ToString()'       
+        </h3>
+        @if (Model.Count == 0)
+        {
+            <p>Products that you are looking for is not exist.</p>
+        }
+    </div>
+    <div class="clear"></div>
+</div>
+
+@for (int i = 0; i < Model.Count; i += 4)
+{
+    <div class="section group">
+        @for (int j = i; j < i + 4; j++)
+        {
+            if (j >= Model.Count)
+            {
+                break;
+            }
+            Model.Models.Product product = Model.ElementAt(j);
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="preview.html"><img src="@Url.Content(product.Title_Image)" alt="" /></a>
+                <h2>@product.Product_Name</h2> <img src="" />
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">@product.Price</span></p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="preview.html">Add to Cart</a></h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        }
+    </div>
+}
+
+

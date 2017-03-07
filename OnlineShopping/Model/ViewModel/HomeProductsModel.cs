@@ -14,5 +14,6 @@ namespace Model.ViewModel
         public List<Product> BestSellerProducts { set; get; }
 
         public List<Catalogue> Catalogues { set; get; }
+        public List<Product> productsBySearch { set; get; }
     }
 }
